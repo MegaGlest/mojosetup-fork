@@ -1,0 +1,13 @@
+## Linux
+.*
+*~
+
+## Git
+!.git
+!.gitignore
+!.gitattributes
+!.gitmodules
+
+## Repo
+/examples/
+/cmake-build/
