@@ -24,15 +24,7 @@ ELSE(NOT BEOS)
     PROJECT(MojoSetup CXX)
 ENDIF(NOT BEOS)
 
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.0)
-
-# !!! FIXME: correct this to new policy and bump minimum cmake requirement.
-IF(COMMAND CMAKE_POLICY)
-    # Use old policy when it comes to escaping macros,
-    # Specifically the one in quotes below.
-    CMAKE_POLICY(SET CMP0005 OLD)
-ENDIF(COMMAND CMAKE_POLICY)
-
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
 
 EXECUTE_PROCESS(
     COMMAND hg tip --template hg-{rev}:{node|short}
@@ -840,4 +832,3 @@ ADD_CUSTOM_TARGET(skeleton
 ADD_DEPENDENCIES(skeleton ${MOJOSETUP_TARGETS})
 
 # end of CMakeLists.txt ...
-
